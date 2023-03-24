@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: php-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: php-app
   ports:
@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: php-app
 spec:
-  replicas: 5
+  replicas: 4
   selector:
     matchLabels:
       app: php-app
